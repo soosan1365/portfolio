@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  font-family: Outfit;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-image: url(../assets/baccc.png);
+  background-repeat: no-repeat;
+  background-size: cover ;
+  background-position: center;
+}
+
+.list{
+  background-image:linear-gradient(
+    to bottom,
+  #f0e8a5,
+  #ecd495,
+  #fcf7ca,
+  #d0be91,
+  #f3dda5  
+  );
+  box-shadow:inset 0px 3px 5px 3px rgb(154, 122, 63);
+
+}
+.user{
+  border-radius: 100%;
+  border:3px solid #eecd78;
+  outline:4px solid #eecd78;
+  outline-offset: 3px;
+}
+.About{
+  background-image: linear-gradient(
+    to bottom,
+  #f5eca5,
+  #8f7e52 50%,
+  #e8dc81,
+  #f0c060,
+  #a08131  
+  );
+  background-clip:text;
+  color: transparent;
+}
+
+.button{
+  background-image: linear-gradient(
+    to bottom,
+  #f5eca5,
+  #8f7e52 50%,
+  #e8dc81,
+  #f2c771,
+  #bc9c4a  
+  );
+  box-shadow:inset 3px -3px 5px 3px rgb(154, 122, 63);
+ 
+}
+.infolist{
+  border:3px solid #d2ad51;
+  border-radius: 35px;
+  border-top: transparent;
+  border-bottom: transparent;
+}
+.infolistimg{
+  border: 4px solid #d2ad51;
+  border-radius: 50%;
+  padding:7px;
+ margin-top:-39px;
+}
+.box{
+  position: relative;
+  width:100%;
+  height:50%;
+  border-radius: 20px;
+  background: repeating-conic-gradient(
+    from var(--a),
+    #897135 0%,
+    #d2ad51 5%,
+    transparent 5%,
+    transparent 40%,
+    #aa8b3e 50%
+  );
+  animation:animate 10s linear infinite;
+  z-index: -3;
+}
+@property --a{ 
+  syntax: "<angle>";
+  inherits: false;
+  initial-value:0deg
+}
+@keyframes animate{
+  0%{
+    --a:0deg;
+  }
+  100%{
+    --a:360deg;
+  }
+}
+.box::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  
+  background: repeating-conic-gradient(
+    from var(--a),
+    #ecc04f 0%,
+    #d2ad51 5%,
+    transparent 5%,
+    transparent 40%,
+    #e7c46a 50%
+   
+  );
+  animation:animate 10s linear infinite;
+  animation-delay: -1s;
+  z-index: -2;
+}
+.box::after{
+  content: "";
+  position: absolute;
+  inset: 8px;
+  background-image: linear-gradient(
+    to bottom,
+    #f5eca5,
+    #b4a06e 50%,
+    #e8dc81,
+    #f2c771,
+    #bc9c4a  
+  );
+
+  border: 4px solid #f7f4e9;
+  border-radius: 15px;
+  z-index: -1;
+}
+
